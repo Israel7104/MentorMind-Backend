@@ -1,10 +1,7 @@
     package com.mentormind.mentormind.entities;
 
     import jakarta.persistence.*;
-    import lombok.AllArgsConstructor;
-    import lombok.Getter;
-    import lombok.NoArgsConstructor;
-    import lombok.Setter;
+    import lombok.*;
 
 
     @Entity
@@ -28,4 +25,9 @@
 
         @Enumerated(EnumType.STRING)
         private Teacher rol;
+
+        @Enumerated (EnumType.STRING)
+        private State state;
+
+
     }

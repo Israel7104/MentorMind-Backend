@@ -1,8 +1,9 @@
 package com.mentormind.mentormind.seeder;
 
+import com.mentormind.mentormind.entities.State;
 import com.mentormind.mentormind.entities.Teacher;
 import com.mentormind.mentormind.entities.UserEntity;
-import com.mentormind.mentormind.repositories.IUserRepository;
+import com.mentormind.mentormind.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class UserSeeder implements CommandLineRunner {
 
     @Autowired
-    private IUserRepository repo;
+    private UserRepository repo;
 
     @Override
     public void run(String... args) {
@@ -26,7 +27,8 @@ public class UserSeeder implements CommandLineRunner {
                     1,
                     10,
                     false,
-                    Teacher.STUDENT
+                    Teacher.STUDENT,
+                    State.ACTIVATED
             );
 
             UserEntity user2 = new UserEntity(
@@ -37,7 +39,8 @@ public class UserSeeder implements CommandLineRunner {
                     2,
                     20,
                     false,
-                    Teacher.TEACHER
+                    Teacher.TEACHER,
+                    State.DESACTIVATED
             );
 
             repo.save(user1);
