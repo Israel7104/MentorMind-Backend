@@ -9,6 +9,7 @@
     @AllArgsConstructor
     @NoArgsConstructor
     @Table(name = "users")
+    @Builder
     public class UserEntity{
 
         @Id
